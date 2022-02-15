@@ -1,29 +1,27 @@
 import React from 'react';
+import './DisplayAllMusic.css'
 
 const DisplayAllMusic = (props) => {
 
-    let mappedMusic = props.musicLibrary.map((song) => {
-        return <tr><td>{song.title}</td> <td>{song.artist}</td> <td>{song.album}</td> <td>{song.genre}</td> <td>{song.releaseDate}</td></tr>
-    })
-
     return(
-        <div> 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Artist</th>
-                        <th>Album</th>
-                        <th>Genre</th>
-                        <th>Release Date</th>
-                    </tr>
-                </thead>
+        <table>
+          {props.musicLibrary.map((song) => {
+            return (
                 <tbody>
-                    {mappedMusic}
+                    <tr>
+                        <th>{song.title}</th>
+                    </tr>
+                    <tr>
+                        <td>{song.artist}</td>
+                    </tr>
+                    <tr>
+                        <td>{song.genre} {song.releaseDate}</td>
+                    </tr>
                 </tbody>
-            </table>
-        </div>
-    )
+            );
+          })}
+      </table>
+     );
 }
  
 export default DisplayAllMusic;

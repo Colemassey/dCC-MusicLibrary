@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import './App.css';
 import axios from 'axios';
 import DisplayAllMusic from "./Components/DisplayAllMusic/DisplayAllMusic";
+import SearchBar from "./Components/Searchbar/SearchBar";
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
   useEffect(() => {
     getAllMusicLibrary();
 
-  }, )
+  }, [])
   async function getAllMusicLibrary() {
     let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music');
     setMusicLibrary(response.data);
@@ -20,7 +21,12 @@ function App() {
   console.log(musicLibrary);
   return (
     <div className="App">
-      <DisplayAllMusic musicLibrary={musicLibrary} />
+      <div>
+        <SearchBar  />
+      </div>
+      <div>
+        <DisplayAllMusic musicLibrary={musicLibrary} />
+      </div>
     </div>
   );
 }
