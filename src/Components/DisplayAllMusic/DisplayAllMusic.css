@@ -4,6 +4,10 @@
     background-color: #232324;
 }
 
+.song {
+    color: #FF8C08;
+}
+
 .parent {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
