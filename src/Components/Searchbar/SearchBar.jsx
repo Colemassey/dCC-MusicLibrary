@@ -15,9 +15,9 @@ const SearchBar = (props) => {
     }
 
     return ( 
-        <div class="topnav">
-            <a class="active" href="#home">OrangeAUDIO</a>
-                <div class="search-container">
+        <div className="topnav">
+            <a className="active" href="#home"><big>Orange</big><small className='audio'>AUDIO</small></a>
+                <div className="search-container">
                     <form onSubmit={handleSubmit} action="/action_page.php">
                         <input type="text" placeholder="Search.." name="search"></input>
                     </form>

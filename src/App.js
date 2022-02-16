@@ -22,11 +22,16 @@ function App() {
   return (
     <div className="App">
       <div>
-        <SearchBar  />
+        <SearchBar />
       </div>
-      <div>
-        <DisplayAllMusic musicLibrary={musicLibrary} />
+      <div class="parent">
+        <div class="div1">
+          <div className="border-box">
+            <DisplayAllMusic musicLibrary={musicLibrary} />
+          </div>
+        </div>
       </div>
+
     </div>
   );
 }

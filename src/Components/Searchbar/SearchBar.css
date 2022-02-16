@@ -15,7 +15,7 @@
 
 .topnav a.active {
     background-color: #232324;
-    color: white;
+    color: #FF8C08;
 }
 
 @media screen and (max-width: 600px) {
@@ -30,4 +30,8 @@
     .topnav input[type=text] {
       border: 1px solid #ccc;
     }
+}
+
+.audio {
+    color: grey;
 }
