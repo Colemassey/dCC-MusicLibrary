@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import './App.css';
 import axios from 'axios';
 import DisplayAllMusic from "./Components/DisplayAllMusic/DisplayAllMusic";
@@ -19,21 +19,18 @@ function App() {
 
   }, [])
   async function getAllMusicLibrary() {
-    let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music');
+    let response = await axios.get('http://127.0.0.1:8000/music/');
     setMusicLibrary(response.data);
 
   }
-  
+
   function searchFilter(search) {
     console.log(search)
     let musicList = musicLibrary.filter((result) => {
-        if (result.title.includes(search) || result.artist.includes(search) || result.album.includes(search) || result.genre.includes(search) || result.releaseDate.includes(search)) {
-            return true;
-        }
-        else return false;
+      return (result.title?.includes(search) || result.artist?.includes(search) || result.album?.includes(search) || result.genre?.includes(search) || result.releaseDate?.includes(search))
     })
-    searchFilter(musicList)
-}
+    setMusicLibrary(musicList);
+  }
 
   console.log(musicLibrary);
   return (
@@ -41,11 +38,12 @@ function App() {
       <div>
         <SearchBar searchProperty={searchFilter} />
       </div>
-      <div class="parent">
-        <div class="div1">
+      <div>
+        <div class="parent">
           <div className="border-box">
             <DisplayAllMusic musicLibrary={musicLibrary} />
           </div>
+          <div className="main-container" />
         </div>
       </div>
     </div>

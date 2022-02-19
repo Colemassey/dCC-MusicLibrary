@@ -1,7 +1,13 @@
 .topnav {
     overflow: hidden;
     background-color: #232324;
-    
+    height: 100px;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
 }
 
 .topnav a {
@@ -19,8 +25,24 @@
     color: #FF8C08;
 }
 
+big {
+    font-size: 44px;
+}
+
+small {
+    font-size: 24px;
+}
+
 .search {
     margin-top: 1em;
+}
+
+.search input {
+    margin-right: 5px;
+    border-radius: 25px;
+}
+
+.search button {
     border-radius: 25px;
 }
 

@@ -9,10 +9,7 @@ const SearchBar = (props) => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        let newSearch = {
-            search: search
-        };
-        props.newSearchProperty(newSearch)
+        props.searchProperty(search)
         setSearch('')
     }
 

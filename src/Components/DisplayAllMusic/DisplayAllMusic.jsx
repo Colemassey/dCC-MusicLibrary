@@ -9,10 +9,10 @@ const DisplayAllMusic = (props) => {
     return (
         <div>
             <div className='displaymusic'>
-                <table>
+                <table >
                     {props.musicLibrary.map((song) => {
                         return (
-                            <tbody>
+                            <tbody key={song.name}>
                                 <tr className='song'>
                                     <th>{song.title}</th>
                                 </tr>
@@ -21,6 +21,9 @@ const DisplayAllMusic = (props) => {
                                 </tr>
                                 <tr>
                                     <td>{song.album} {song.releaseDate}</td>
+                                </tr>
+                                <tr>
+                                    <td>{song.genre}</td>
                                 </tr>
                             </tbody>
                         );
