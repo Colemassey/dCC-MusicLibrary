@@ -27,7 +27,7 @@ function App() {
   function searchFilter(search) {
     console.log(search)
     let musicList = musicLibrary.filter((result) => {
-      return (result.title?.includes(search) || result.artist?.includes(search) || result.album?.includes(search) || result.genre?.includes(search) || result.releaseDate?.includes(search))
+      return (result.title?.includes(search) || result.artist?.includes(search) || result.album?.includes(search) || result.genre?.includes(search) || result.release_date?.includes(search))
     })
     setMusicLibrary(musicList);
   }
