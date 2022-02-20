@@ -23,7 +23,7 @@ const DisplayAllMusic = (props) => {
                                 <tr>
                                     <td>{song.album}</td>
                                 </tr>
-                                <tr>
+                                <tr className='release'>
                                     <td>{song.release_date}</td>
                                 </tr>
                                 <tr className='genre'>

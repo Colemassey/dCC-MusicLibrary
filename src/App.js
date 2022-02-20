@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import DisplayAllMusic from "./Components/DisplayAllMusic/DisplayAllMusic";
 import SearchBar from "./Components/Searchbar/SearchBar";
+import DisplaySingleSong from "./Components/DisplaySingleSong/DisplaySingleSong";
 
 //  To Do: Searchbar, scroll bar for display table, way to select a song and display the song in new component, add background image.
 
@@ -32,6 +33,8 @@ function App() {
     setMusicLibrary(musicList);
   }
 
+  
+
   console.log(musicLibrary);
   return (
     <div className="App">
@@ -42,6 +45,9 @@ function App() {
         <div class="parent">
           <div className="border-box">
             <DisplayAllMusic musicLibrary={musicLibrary} />
+          </div>
+          <div>
+            <DisplaySingleSong  />
           </div>
           <div className="main-container" />
         </div>

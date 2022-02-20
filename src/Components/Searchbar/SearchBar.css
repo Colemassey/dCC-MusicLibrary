@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Roboto+Serif&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
 
 .topnav {
     overflow: hidden;
@@ -35,7 +35,7 @@ big {
 
 small {
     font-size: 24px;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Roboto Serif', sans-serif;
     weight: 700;
 }
 

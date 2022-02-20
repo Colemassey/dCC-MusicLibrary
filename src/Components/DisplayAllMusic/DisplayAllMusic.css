@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
 
-.my-custom-scrollbar {
-    position: relative;
-    height: 200px;
-    overflow: auto;
-    }
-
-    .table-wrapper-scroll-y {
-    display: block;
-    }
-
 .song {
     color: #FF8C08;
     font-family: 'Cinzel Decorative', cursive;
     font-size: large;
+}
+
+.release {
+    font-weight: lighter;
+    font-size: small;
 }
 
 .genre {

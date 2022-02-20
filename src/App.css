@@ -13,6 +13,7 @@ div {
 }
 
 body ::-webkit-scrollbar {
+  /* comment this out for visible scrollbar in display data */
   width: 1em;
 }
 
@@ -39,6 +40,7 @@ body ::-webkit-scrollbar {
   max-width: 15em;
   max-height: 800px;
   font-family: 'Roboto', sans-serif;
+  justify-content: center;
   text-align: center;
   overflow-y: scroll;
 }
