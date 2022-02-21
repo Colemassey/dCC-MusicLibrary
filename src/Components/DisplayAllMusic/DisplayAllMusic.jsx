@@ -5,7 +5,6 @@ import '../Searchbar/SearchBar'
 const DisplayAllMusic = (props) => {
 
 
-
     return (
         <div>
             <div>
