@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import AddNewSong from '../AddNewSong/AddNewSong';
 import './SearchBar.css'
+import axios from 'axios';
 
 const SearchBar = (props) => {
 
@@ -17,10 +19,10 @@ const SearchBar = (props) => {
         setFilteredMusic(props.musicLibrary)
     }, [props.musicLibrary])
 
-    async function handleAdd(requestBody) {
-        const response = await axios.put(`http://127.0.0.1:8000/music/`, requestBody).then((response)=> response).catch((error)=> console.log(error));  
-        props.updateMusicLibrary(response) 
-      };
+    // async function handleAdd(requestBody) {
+    //     const response = await axios.post(`http://127.0.0.1:8000/music/`, requestBody).then((response)=> response).catch((error)=> console.log(error));  
+    //     props.updateMusicLibrary(response) 
+    //   };
     
     return ( 
         <div className="topnav">
@@ -35,6 +37,7 @@ const SearchBar = (props) => {
                         ></input>
                         <button type="submit">Search</button>
                     </form>
+                    {/* <AddNewSong handleSubmit={handleAdd} /> */}
                 </div>
         </div>
     );

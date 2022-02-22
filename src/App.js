@@ -40,11 +40,14 @@ function App() {
       const musicLibraryCopy = [...musicLibrary]
       const songIndex = musicLibraryCopy.findIndex(song=>song.id=updatedSong.id)
       if (songIndex){
-        musicLibraryCopy.splice(songIndex, 1, updatedSong)
+        musicLibraryCopy.splice(songIndex, 1, updatedSong);
+      
       }
     }
+    getAllMusicLibrary();
   }
 
+  
 
 
   // function selectFilter(single) {

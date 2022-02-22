@@ -23,6 +23,7 @@ const EditSongForm = ({ show, handleClose, handleSubmit, song }) => {
             event.preventDefault();
         };
     }
+    
     return (
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -38,7 +39,7 @@ const EditSongForm = ({ show, handleClose, handleSubmit, song }) => {
                 <label>Genre:</label>
                 <input required type='text' className="form-control" value={songGenre} onChange={(event) => setSongGenre(event.target.value)} />
                 <label>Release Date:</label>
-                <input required type='text' className="form-control" value={songRelease} onChange={(event) => setSongRelease(event.target.value)} />
+                <input required type='date' className="form-control" value={songRelease} onChange={(event) => setSongRelease(event.target.value)} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose} >
