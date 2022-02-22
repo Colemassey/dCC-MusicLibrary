@@ -6,6 +6,7 @@ html, body, #root, .App {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 div {
@@ -20,14 +21,28 @@ body ::-webkit-scrollbar {
 .App {
   background-image: url(Music_BG.jpg);
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .parent-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.main-wrapper {
+  height: 100%;
 }
 
 .parent {
-  height: calc(100% - 100vh);
+  height: calc(100% - 100px);
   display: flex;
   flex-direction: row;
   align-items: stretch;
 }
+
+
 
 .border-box {
   box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.17);
@@ -38,7 +53,7 @@ body ::-webkit-scrollbar {
   padding: 5px;
   margin: 1em;
   max-width: 15em;
-  max-height: 800px;
+  max-height: 100%;
   font-family: 'Roboto', sans-serif;
   justify-content: center;
   text-align: center;
@@ -59,3 +74,18 @@ body ::-webkit-scrollbar {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+/* .border-box-2 {
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.17);
+  color:rgb(255, 255, 255);
+  background-color: #818181;
+  opacity: 0.8;
+  flex: 1;
+  border-radius: 25px;
+  /* padding: 5px;
+  margin: 1em; */
+  /* max-width: 15em;
+  max-height: 800px; */
+  /* font-family: 'Roboto', sans-serif;
+  justify-content: center;
+  text-align: center; */

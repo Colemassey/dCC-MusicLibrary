@@ -17,7 +17,10 @@ const SearchBar = (props) => {
         setFilteredMusic(props.musicLibrary)
     }, [props.musicLibrary])
 
-
+    async function handleAdd(requestBody) {
+        const response = await axios.put(`http://127.0.0.1:8000/music/`, requestBody).then((response)=> response).catch((error)=> console.log(error));  
+        props.updateMusicLibrary(response) 
+      };
     
     return ( 
         <div className="topnav">

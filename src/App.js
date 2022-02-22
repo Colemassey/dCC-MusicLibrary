@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import DisplayAllMusic from "./Components/DisplayAllMusic/DisplayAllMusic";
 import SearchBar from "./Components/Searchbar/SearchBar";
-import DisplaySingleSong from "./Components/DisplaySingleSong/DisplaySingleSong";
+// import DisplaySingleSong from "./Components/DisplaySingleSong/DisplaySingleSong";
 
 //  To Do: Searchbar, scroll bar for display table, way to select a song and display the song in new component, add background image.
 
@@ -14,7 +14,7 @@ import DisplaySingleSong from "./Components/DisplaySingleSong/DisplaySingleSong"
 function App() {
 
   const [musicLibrary, setMusicLibrary] = useState([]);
-  const [singleSongDisplay, setSingleSongDisplay] = useState({});
+  // const [singleSongDisplay, setSingleSongDisplay] = useState({});
 
   useEffect(() => {
     getAllMusicLibrary();
@@ -34,14 +34,26 @@ function App() {
     setMusicLibrary(musicList);
   }
 
-  function selectFilter(pk) {
-    console.log(singleSong)
-    let singleSong = musicLibrary.filter((result) => {
-      return (result.title?.includes(pk) || result.artist?.includes(pk) || result.album?.includes(pk) || result.genre?.includes(pk) || result.release_date?.includes(pk))
-    })
-    setSingleSong(singleSong);
+
+  function updateMusicLibrary(updatedSong) {
+    if (updatedSong?.id) {
+      const musicLibraryCopy = [...musicLibrary]
+      const songIndex = musicLibraryCopy.findIndex(song=>song.id=updatedSong.id)
+      if (songIndex){
+        musicLibraryCopy.splice(songIndex, 1, updatedSong)
+      }
+    }
   }
 
+
+
+  // function selectFilter(single) {
+  //   console.log(singleSong)
+  //   let singleSong = song.filter((result) => {
+  //     return (result.id.includes(single))
+  //   })
+  //   setSingleSong(singleSong);
+  // }
 
   // console.log(musicLibrary);
   return (
@@ -49,14 +61,16 @@ function App() {
       <div>
         <SearchBar searchProperty={searchFilter} />
       </div>
-      <div>
+      <div className= 'main-wrapper'>
         <div class="parent">
           <div className="border-box">
-            <DisplayAllMusic musicLibrary={musicLibrary} />
+            <DisplayAllMusic musicLibrary={musicLibrary} updateMusicLibrary={updateMusicLibrary} />
           </div>
-          <div>
+          {/* <div className="parent-2">
+          <div className="border-box-2">
             <DisplaySingleSong selectProperty={selectFilter} />
           </div>
+          </div> */}
           <div className="main-container" />
         </div>
       </div>
